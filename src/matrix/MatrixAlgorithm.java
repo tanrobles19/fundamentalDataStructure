@@ -1,4 +1,4 @@
-package com.string.algorithm;
+package matrix;
 
 public class MatrixAlgorithm {
 
