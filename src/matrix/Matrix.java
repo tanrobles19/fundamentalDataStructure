@@ -1,5 +1,7 @@
 package matrix;
 
+import java.util.Scanner;
+
 public class Matrix {
 	
 	private int rows;
@@ -34,6 +36,27 @@ public class Matrix {
 		this.columns = columns;
 	}
 
+	public void read(String textMessage) { 
+		
+		System.out.println("Enter " + textMessage + " matrix elements");
+		Scanner s = new Scanner(System.in); 
+		
+		for(int i = 0; i < rows; i++) {
+			for(int j = 0; j < columns; j++) {
+				data[i][j] = s.nextInt();
+			}	
+		}
+		
+		print();
+	}	
 	
+	public void print() { 
+		for (int i = 0; i < rows; i++) { 
+			for (int j = 0; j < columns; j++) { 
+				System.out.print(data[i][j] + " "); 
+			}// end for 
+			System.out.println(); 
+		}//end for 
+	}// end method print()
 	
 }
