@@ -247,5 +247,7 @@ public class StringAlgorithmTest {
 		return isPalindromeRecursive(value.substring(1)) + value.charAt(0);
 		
 	}// end method isPalindromeRecursive()
+	
+	
 
 }

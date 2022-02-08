@@ -1,23 +1,11 @@
-package com.test;
+package microsoft.algorithm;
 
 import java.util.ArrayList;
 
-public class MainClase {
+public class Algorithm {
 
-	public static void main(String[] args) {
-				
-		String dataSource = "aabbaaabaaaabbbb";
-		
-		solution(dataSource);
-		
-//		System.out.println("");
-		
-	}
-	
-	
-	
 	public static void solution(String dataSource) {
-				
+		
 		String inicial;
 		String next;
 		
@@ -63,5 +51,5 @@ public class MainClase {
 		System.out.println(fragmentList.toString());
 		
 	}
-
+	
 }
