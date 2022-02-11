@@ -49,4 +49,33 @@ public class Algorithm {
 		
 	}// end method solution()
 	
+	public static void solution2(String dataSource) {
+		
+		ArrayList<String> list = new ArrayList<String>();
+		
+		for(int i = 0; i < dataSource.length(); i++) {
+			
+			String currentCharacter = dataSource.substring(i, i + 1);
+		
+			if(list.isEmpty()) {
+				list.add(currentCharacter);
+			}else {
+				
+				int lastIndex = list.size() -1;
+				String lastValue = list.get( lastIndex );
+				
+				if(lastValue.substring(0, 1).equalsIgnoreCase(currentCharacter)) {
+					list.set(lastIndex, lastValue + currentCharacter);
+				}else {
+					list.add(currentCharacter);
+				}
+			}// end else
+			
+		}// end for
+				
+		for(String s : list)
+			System.out.println(s);
+		
+	}// end method solution2()	
+	
 }

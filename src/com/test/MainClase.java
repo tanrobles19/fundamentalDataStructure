@@ -14,7 +14,7 @@ public class MainClase {
 		
 		String data = "aaaababababbbbbabbababbbb";		
 		
-		solution(data);
+//		solution(data);
 		
 //		System.out.println("isAnagram: " + solution(anagram, word));
 		
@@ -24,37 +24,5 @@ public class MainClase {
 	    System.out.println("End: " + date1);
 			
 	}	
-	
-	
-	
-	public static void solution(String dataSource) {
-						
-		ArrayList<String> list = new ArrayList<String>();
-		
-		for(int i = 0; i < dataSource.length(); i++) {
-			
-			String currentCharacter = dataSource.substring(i, i + 1);
-		
-			if(list.isEmpty()) {
-				list.add(currentCharacter);
-			}else {
-				
-				int lastIndex = list.size() -1;
-				String last = list.get( lastIndex );
-				
-				if(last.substring(0, 1).equalsIgnoreCase(currentCharacter)) {
-					list.set(lastIndex, last + currentCharacter);
-				}else {
-					list.add(currentCharacter);
-				}
-			}// end else
-			
-		}// end for
-				
-		for(String s : list)
-			System.out.println(s);
-		
-	}// end method solution()	
-
 	
 }
