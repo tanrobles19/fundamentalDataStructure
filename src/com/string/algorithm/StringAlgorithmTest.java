@@ -30,6 +30,13 @@ public class StringAlgorithmTest {
 						
 			Integer countLetter = duplicateList.get(character);		
 			
+			/*
+			 * 
+			 * Improve the code.
+			 * 
+			 * counts.put(c, counts.containsKey(c) ? counts.get(c) + 1 : 1);
+			 * */
+			
 			if(countLetter == null) {
 				duplicateList.put(character, 1);
 				
@@ -64,23 +71,20 @@ public class StringAlgorithmTest {
 		
 	}// end method findDuplicateCharacters()
 	
-	public static void firstNonRepeatedCharater(String word) {
+	public static void firstNonRepeatedCharater(String dataSource) {
 		
-		char rawList[] = word.toCharArray();
+		char rawList[] = dataSource.toCharArray();
 		
 		//LinkedHashMap maintains the insertion order.
-		Map<Character, Integer> list = new LinkedHashMap<Character, Integer>();
+		char characterList[] = dataSource.toCharArray();
 		
+		Map<Character, Integer> map = new LinkedHashMap<Character, Integer>();
 		
-		for (char c : rawList) {
-			if(list.containsKey(c)) {
-				list.put(c, list.get(c) + 1);
-			}else {
-				list.put(c, 1);
-			}
-		}// end for
+		for(char c : characterList) {			
+			map.put(c, map.containsKey(c)? map.get(c) + 1 : 1 );						
+		}
 		
-		Set<Map.Entry<Character, Integer>> entrySet = list.entrySet();
+		Set<Map.Entry<Character, Integer>> entrySet = map.entrySet();
 		
 		for (Entry<Character, Integer> item : entrySet) {
 			if(item.getValue() == 1 ) 
@@ -229,6 +233,4 @@ public class StringAlgorithmTest {
 		
 	}// end method isPalindromeRecursive()
 	
-	
-
 }

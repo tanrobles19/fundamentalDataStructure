@@ -1,6 +1,8 @@
 package com.test;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import domain.Fragment;
 
@@ -12,9 +14,9 @@ public class MainClase {
 	    System.out.println("Init: " + date);
 	    System.out.println(" ");
 		
-		String data = "aaaababababbbbbabbababbbb";		
+		String data = "aswisss";		
 		
-//		solution(data);
+		printNonRepeatedCharacter(data);
 		
 //		System.out.println("isAnagram: " + solution(anagram, word));
 		
@@ -24,5 +26,19 @@ public class MainClase {
 	    System.out.println("End: " + date1);
 			
 	}	
+	
+	private static void printNonRepeatedCharacter(String dataSource) {
+		
+		char characterList[] = dataSource.toCharArray();
+		
+		Map<Character, Integer> map = new LinkedHashMap<Character, Integer>();
+		
+		for(char c : characterList) {			
+			map.put(c, map.containsKey(c)? map.get(c) + 1 : 1 );						
+		}
+		
+		System.out.println("map: " + map.toString());
+		
+	}
 	
 }
