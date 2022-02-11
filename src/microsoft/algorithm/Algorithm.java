@@ -3,13 +3,10 @@ package microsoft.algorithm;
 import java.util.ArrayList;
 
 public class Algorithm {
-
+	
 	public static void solution(String dataSource) {
 		
-		String inicial;
-		String next;
-		
-		String fragment = "";
+		String inicial, next, fragment = "";
 		
 		ArrayList<String> fragmentList = new ArrayList<String>();
 		
@@ -50,6 +47,6 @@ public class Algorithm {
 		
 		System.out.println(fragmentList.toString());
 		
-	}
+	}// end method solution()
 	
 }

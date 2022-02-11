@@ -71,6 +71,7 @@ public class StringAlgorithmTest {
 		//LinkedHashMap maintains the insertion order.
 		Map<Character, Integer> list = new LinkedHashMap<Character, Integer>();
 		
+		
 		for (char c : rawList) {
 			if(list.containsKey(c)) {
 				list.put(c, list.get(c) + 1);
