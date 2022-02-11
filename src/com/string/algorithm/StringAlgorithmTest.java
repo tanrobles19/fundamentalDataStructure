@@ -44,47 +44,25 @@ public class StringAlgorithmTest {
 		
 	}// end method findDuplicateCharacters()
 	
-	public static void checkAnagramWords(String anagram, String value) {		
-
-        if(anagram.length() != value.length()){
-			System.out.println("MALLL");
-            return;
-        }
+	private static boolean isAnagram(String anagram, String word) {
 		
-		boolean anagramY = true;
+		char chars[] = word.toCharArray();
 		
-		for(int i = 0; i < anagram.length(); i++ ) {
-			
-			String anag = anagram.substring(i, i + 1);
-			
-			System.out.println("anag: " + anag);
-			
-			boolean flag = false;
-			
-			for(int x = 0; x < value.length(); x++ ) {
+		for( char c : chars) {
+			int index = anagram.indexOf(c);
+			if(index != -1) {
+		
+				System.out.println(index);
+				anagram = anagram.substring(0, index) + anagram.substring(index + 1, anagram.length());
 				
-				String val = value.substring(x, x + 1);			
-				
-				if(anag.equalsIgnoreCase(val)) {
-//					System.out.println("falla con: " + anag);
-					flag = true;
-					continue;
-				}
-				
+			}else {
+				return false;
 			}
-			
-			if(!flag) {
-				System.out.println("MALLL");
-				anagramY = false;
-				break;
-			}
-			
 		}
-		if(anagramY) {
-			System.out.println("We are an Anagram!");
-		}
-			
-	}// end method checkAnagramWords()
+		
+		return anagram.isEmpty();
+		
+	}// end method findDuplicateCharacters()
 	
 	public static void firstNonRepeatedCharater(String word) {
 		
