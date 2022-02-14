@@ -27,6 +27,9 @@ public class MainClase {
 			
 	}	
 	
+	
+//	4. reverse 
+	
 	private static void printNonRepeatedCharacter(String dataSource) {
 		
 		char characterList[] = dataSource.toCharArray();
