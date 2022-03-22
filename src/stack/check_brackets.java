@@ -1,15 +1,16 @@
-package stack;
-
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class Week1 {
+import java.io.IOException;
 
-	public static void main(String[] args) {
-		
-		System.out.print(isBalanced());
 
-	}// end main
+class check_brackets {
 	
+    public static void main(String[] args) throws IOException {
+		System.out.print(isBalanced());        
+    }
+    
 	public static class Bracket {
 		
 	    char type;
@@ -20,11 +21,19 @@ public class Week1 {
 	        this.position = position;
 	    }
 	}
-	
-
+    
 	public static String isBalanced() {
 		
-		String text = "[](()";
+        InputStreamReader input_stream = new InputStreamReader(System.in);
+        BufferedReader reader = new BufferedReader(input_stream);
+        String text = "";
+        
+		try {
+			text = reader.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		int position = 0;
 		
