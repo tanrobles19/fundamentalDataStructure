@@ -39,6 +39,8 @@ public class tree_height {
 		Nodex parent[];
 		Nodex nodes[];
 		
+		Nodex root;
+		
 		void read() throws IOException {
 			FastScanner in = new FastScanner();
 			n = in.nextInt();
@@ -51,20 +53,20 @@ public class tree_height {
 			}
 		}				
 						
-		int computeHeight() {					
+		int computeHeight() {
 			
 			for(int child_index = 0; child_index < n; child_index++) {
 				int parent_index = parent[child_index].index;
 				
 				if(parent_index == -1) {
-					// I am the root
+					root = nodes[child_index]; 
 				}else {
 					nodes[parent_index].node.add( nodes[child_index] );
 				}
 				
 			}// end for			
 			
-			return -9;
+			return root.index;
 			
                         // Replace this code with a faster implementation
 //			int maxHeight = 0;
