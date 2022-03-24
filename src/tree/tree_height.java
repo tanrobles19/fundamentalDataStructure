@@ -1,4 +1,3 @@
-package tree;
 
 import java.util.*;
 import java.io.*;
@@ -64,20 +63,28 @@ public class tree_height {
 					nodes[parent_index].node.add( nodes[child_index] );
 				}
 				
-			}// end for			
+			}// end for								
 			
-			return root.index;
-			
-                        // Replace this code with a faster implementation
-//			int maxHeight = 0;
-//			for (int vertex = 0; vertex < n; vertex++) {
-//				int height = 0;
-//				for (int i = vertex; i != -1; i = parent[i])
-//					height++;
-//				maxHeight = Math.max(maxHeight, height);
-//			}
-//			return maxHeight;
+			return height(root);
 		}
+		
+		private int height(Nodex tree) {
+			
+			if(tree == null || tree.node == null) {
+				return 0;
+			}else {
+				
+				int height = 0;
+				
+				for(Nodex child : tree.node) {
+					height = Math.max(height, height(child));
+				}
+				
+				return  height + 1;
+			}
+			
+		}// end height()
+		
 	}
 
 	static public void main(String[] args) throws IOException {
